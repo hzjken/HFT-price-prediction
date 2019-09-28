@@ -53,5 +53,5 @@ Ensemble of lightGBM and random forest model.<br>
 Based on search space to decide whether using grid search or genetic search for lightGBM model's parameter tuning.<br>
 <b>grid search</b>: **`model.GS_tune_lgbm()`** <br>
 <b>genetic search</b>: **`model.GA_tune_lgbm()`** <br>
-### Performance
+## Performance
 Out-of-sample classfication accuracy is roughly 76-78%, which means its prediction of the short-term future price movement is acceptable.
