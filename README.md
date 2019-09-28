@@ -1,7 +1,5 @@
 # HFT-price-prediction
 A project of using machine learning model (tree-based) to predict instrument price up or down in high frequency trading.
- 
-![high frequency](https://user-images.githubusercontent.com/30411828/65812148-a6039300-e1f5-11e9-95c7-8f6fee33f3b0.jpg)
 
 ## Project Background
 A data science hands-on exercise of a high frequency trading company. 
