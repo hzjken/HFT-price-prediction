@@ -433,8 +433,8 @@ class feature:
         return features
 
 
-def train_model():
-    data = pd.read_csv('data.csv')
+def train_model(data, target_label):
+    data = data.copy()
     data = preprocessing(data)
     check_null(data)
     data = fill_null(data)
@@ -452,10 +452,11 @@ def train_model():
     joblib.dump(lightgbm, 'lgbm.joblib')
 
 
-def predict(data):
+def predict(data, target_label):
     '''returns both the prediction and the target_label'''
     features = feature.load()['keep_features']
     correlation_remove = feature.load()['correlation_remove']
+    data = data.copy()
     data = preprocessing(data)
     data = fill_null(data)
     x, y = x_y_split(data)
@@ -476,8 +477,7 @@ def predict(data):
 
 
 if __name__ == '__main__':
-    global target_label
-    target_label = '_5s_side'
-    train_model()
     data = pd.read_csv('data.csv')
-    pred, true_val = predict(data)
+    target_label = '_5s_side'
+    train_model(data, target_label)
+    pred, true_val = predict(data, target_label)
